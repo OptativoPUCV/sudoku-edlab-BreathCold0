@@ -56,18 +56,13 @@ List* get_adj_nodes(Node* n){
        if (n->sudo[i][j] == 0) {
 
          for(cont = 1; cont <= 9; cont++){
-          /*  n->sudo[i][j] = cont;
+            n->sudo[i][j] = cont;
             if (is_valid(n)) {
             Node *adj_n = copy(n);
             pushBack(list, adj_n); 
-            } */
-            Node *adj_n = (Node*) malloc(sizeof(Node));
-            adj_n = copy(n);
-            adj_n->sudo[i][j] = cont;
-            pushBack(list, adj_n); 
-
+            }
          }
-       }
+         }
        n->sudo[i][j] = 0;
        return list;
      }
