@@ -92,7 +92,7 @@ Node* DFS(Node* initial, int* cont){
   push(S,initial);
   while (get_size(S) != 0) {
     cont++;
-    Node * n = top(S);
+    Node * n = first(S);
     pop(S);
     if (is_final(n)) {
       return n;
