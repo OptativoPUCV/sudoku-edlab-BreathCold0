@@ -98,10 +98,10 @@ Node* DFS(Node* initial, int* cont){
       return n;
     }
     List * adj = get_adj_nodes(n);    
-    //Node * aux = first(n);
-    while (adj != NULL) {
-      push(S,adj);
-      adj=next(adj);
+    Node * aux = first(adj);
+    while (aux != NULL) {
+      push(S,aux);
+      aux=next(adj);
     }
     free(n);
   }
