@@ -84,7 +84,9 @@ int is_valid(Node* n){
       if ((i > 5)&&(j > 5)) {
         k = 8;
       }
-      if (aux->sudo[i][j] == 0) continue;
+      if (aux->sudo[i][j] == 0) {
+        return 0;
+      }
       int p; 
       for(p=0;p<9;p++){
         int f =3*(k/3) + (p/3) ;
