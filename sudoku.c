@@ -51,10 +51,10 @@ int is_valid(Node* n){
       if (aux->sudo[i][j] == 0) continue;
       int k;
       for (k = 0; k < 9; k++) {
-        if (aux->sudo[i][k] == aux->sudo[i][j]) {
+        if ((aux->sudo[i][k] == aux->sudo[i][j])&&(k != j)) {
           return 0;
         }
-        if (aux->sudo[k][j] == aux->sudo[i][j]) {
+        if ((aux->sudo[k][j] == aux->sudo[i][j])&&(k != i)) {
           return 0;
         }
       }
@@ -85,7 +85,6 @@ int is_valid(Node* n){
       if ((i > 5)&&(j > 5)) {
         k = 8;
       }
-      //if (aux->sudo[i][j] == 0) continue;
       int p; 
       for(p=0;p<9;p++){
         int f =3*(k/3) + (p/3) ;
