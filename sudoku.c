@@ -53,6 +53,11 @@ int is_valid(Node* n){
         if ((aux->sudo[i][k] == aux->sudo[i][j])&&(k != j)) {
           return 0;
         }
+        //if ((aux->sudo[k][j] == aux->sudo[i][j])&&(k != i)) {
+          //return 0;
+        //}
+      }
+      for (k = 0; k < 9; k++) {
         if ((aux->sudo[k][j] == aux->sudo[i][j])&&(k != i)) {
           return 0;
         }
