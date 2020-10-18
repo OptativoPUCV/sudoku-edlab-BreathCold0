@@ -87,7 +87,7 @@ int is_valid(Node* n){
       for(p=0;p<9;p++){
         int f =3*(k/3) + (p/3) ;
         int c =3*(k%3) + (p%3) ;
-        if (aux->sudo[c][f] == aux->sudo[i][j]) {
+        if (aux->sudo[f][c] == aux->sudo[i][j]) {
           return 0;
         }
       }
