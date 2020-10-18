@@ -47,7 +47,7 @@ int is_valid(Node* n){
   int i,j;
   for (i = 0; i < 9; i++) {
     for (j = 0; j < 9; j++) {
-      if (aux->sudo[i][j] == 0) continue;
+      if (aux->sudo[i][j] == 0) return 1;
       int k;
       for (k = 0; k < 9; k++) {
         if ((aux->sudo[i][k] == aux->sudo[i][j])&&(k != j)) {
@@ -84,9 +84,9 @@ int is_valid(Node* n){
       if ((i > 5)&&(j > 5)) {
         k = 8;
       }
-      int p; // es un error de logica por eso no lo dice
+      int p; // entonces rutealo en papel, revisa si con todos los numeros arroja bien el valor
       for(p=0;p<9;p++){
-        int f =3*(k/3) + (p/3) ; //
+        int f =3*(k/3) + (p/3) ;
         int c =3*(k%3) + (p%3) ;
         if ((aux->sudo[f][c] == aux->sudo[i][j]) && (f != i && c != j)) {
           return 0;
@@ -107,10 +107,10 @@ List* get_adj_nodes(Node* n){
 
          for(cont = 1; cont <= 9; cont++){
             n->sudo[i][j] = cont;
-            //zif (is_valid(n)) {
+            //if (is_valid(n)) {
             Node *adj_n = copy(n);
             pushBack(list, adj_n); 
-            //z}
+            //}
          }
          n->sudo[i][j] = 0;
          return list;
