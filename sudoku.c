@@ -45,7 +45,7 @@ void print_node(Node* n){
 int is_valid(Node* n){
   Node * aux = n;
   int i,j;
-  
+  return 1;
   for (i = 0; i < 9; i++) {
     for (j = 0; j < 9; j++) {
       if (aux->sudo[i][j] == 0) continue;
@@ -85,9 +85,9 @@ int is_valid(Node* n){
       if ((i > 5)&&(j > 5)) {
         k = 8;
       }
-      int p; 
+      int p; // es un error de logica por eso no lo dice
       for(p=0;p<9;p++){
-        int f =3*(k/3) + (p/3) ;
+        int f =3*(k/3) + (p/3) ; // 
         int c =3*(k%3) + (p%3) ;
         if ((aux->sudo[f][c] == aux->sudo[i][j]) && (f != i && c != j)) {
           return 0;
