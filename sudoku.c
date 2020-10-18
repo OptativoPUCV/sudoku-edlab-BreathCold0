@@ -53,11 +53,6 @@ int is_valid(Node* n){
         if ((aux->sudo[i][k] == aux->sudo[i][j])&&(k != j)) {
           return 0;
         }
-        //if ((aux->sudo[k][j] == aux->sudo[i][j])&&(k != i)) {
-          //return 0;
-        //}
-      }
-      for (k = 0; k < 9; k++) {
         if ((aux->sudo[k][j] == aux->sudo[i][j])&&(k != i)) {
           return 0;
         }
@@ -112,10 +107,10 @@ List* get_adj_nodes(Node* n){
 
          for(cont = 1; cont <= 9; cont++){
             n->sudo[i][j] = cont;
-            if (is_valid(n)) {
+            //zif (is_valid(n)) {
             Node *adj_n = copy(n);
             pushBack(list, adj_n); 
-            }
+            //z}
          }
          n->sudo[i][j] = 0;
          return list;
