@@ -56,7 +56,41 @@ int is_valid(Node* n){
           return 0;
         }
       }
-
+      if ((i <= 2)&&(j <= 2)) {
+        k = 0;
+      }
+      if ((i > 2 && i <= 5)&&(j <= 2)) {
+        k = 1;
+      }
+      if ((i > 5)&&(j <= 2)) {
+        k = 2;
+      }
+      if ((i <= 2)&&(j > 2 && j <= 5)) {
+        k = 3;
+      }
+      if ((i > 2 && i <= 5)&&(j > 2 && j <= 5)) {
+        k = 4;
+      }
+      if ((i > 5)&&(j > 2 && j <= 5)) {
+        k = 5;
+      }
+      if ((i <= 3)&&(j > 5)) {
+        k = 6;
+      }
+      if ((i > 2 && i <= 5)&&(j > 5)) {
+        k = 7;
+      }
+      if ((i > 5)&&(j > 5)) {
+        k = 8;
+      }
+      int p; 
+      for(p=0;p<9;p++){
+        int f =3*(k/3) + (p/3) ;
+        int c =3*(k%3) + (p%3) ;
+        if (aux->sudo[f][c] == aux->sudo[i][j]) {
+          return 0;
+        }
+      }
     }
   }
     return 1;
@@ -72,10 +106,10 @@ List* get_adj_nodes(Node* n){
 
          for(cont = 1; cont <= 9; cont++){
             n->sudo[i][j] = cont;
-            //if (is_valid(n)) {
+            if (is_valid(n)) {
             Node *adj_n = copy(n);
             pushBack(list, adj_n); 
-            //}
+            }
          }
          n->sudo[i][j] = 0;
          return list;
